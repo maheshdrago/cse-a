@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cse-a</title>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,500|Dosis:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/animate.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/aos.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-datepicker.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/jquery.timepicker.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/icomoon.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/fancybox.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">CSE-A</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li id='mm' class="nav-item "><a href="{{url_for('core.index')}}" class="nav-link">Home</a></li>
+            <li class="nav-item "><a href="{{url_for('core.donate')}}" class="nav-link">Assignments</a></li>
+            <li class="nav-item"><a href="{{url_for("core.timeTable")}}" class="nav-link">Time table</a></li>
+            <li class="nav-item"><a href="{{url_for("core.gallery")}}" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="{{url_for('core.upcomingEvents')}}" class="nav-link">Upcoming Events</a></li>
+            <li class="nav-item"><a href="{{url_for('core.about')}}" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="{{url_for('core.contact')}}" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+  <div class="featured-section overlay-color-2" style="background-image: url('static/images/bg_2.jpg');">
+
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 mb-5 mb-md-0">
+
+          <img src="static/images/bg_2.jpg" alt="Image placeholder" class="img-fluid">
+
+        </div>
+
+        <div class="col-md-6 pl-md-5">
+
+          <div class="form-volunteer">
+
+
+            <h2>Be A Volunteer Today and help us maintain the website</h2>
+            <form action="{{url_for('core.contact')}}" method="post">
+              <div class="form-group">
+                <!-- <label for="name">Name</label> -->
+                <input type="text" class="form-control py-2" name='name' id="name" placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <!-- <label for="email">Email</label> -->
+                <input type="text" name='email' class="form-control py-2" id="email" placeholder="Enter your email">
+              </div>
+              <div class="form-group">
+                <!-- <label for="v_message">Email</label> -->
+                <textarea  name='message' id="" cols="30" rows="3" class="form-control py-2" placeholder="Write your message"></textarea>
+
+                <!-- <input type="text" class="form-control py-2" id="email"> -->
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-white px-5 py-2" value="Send">
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div> <!-- .featured-donate -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-6 col-lg-4">
+          <h3 class="heading-section">About Us</h3>
+          <p class="lead">We are aspiring developers who love to implement what we learn and motivate others to do the same as well.</p>
+          <p class='lead'>Learning never stops.You are only trapped in between the walls you built for yourself.Overcome and make your way through the walls because if you dont challenge yourself,you will never realise what you can become.</p>
+          <p><a href="{{url_for('core.about')}}" class="link-underline">Read  More</a></p>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <h3 class="heading-section">Recent Sites</h3>
+          <div class="block-21 d-flex mb-4">
+            <figure class="mr-3">
+
+              <img src="static/images/corona.jpg" alt="" class="img-fluid">
+
+            </figure>
+            <div class="text">
+              <h3 class="heading"><a href="http://coronaupdates123.herokuapp.com/">Corona Updates</a></h3>
+              <div class="meta">
+                <div><a href="#"><span class="icon-calendar"></span> march , 2020</a></div>
+                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="block-23">
+            <h3 class="heading-section">Get Connected</h3>
+              <ul>
+                <li><span class="icon icon-map-marker"></span><span class="text"> Opp.A.P.Forest Academy, Maisammaguda, Medchal, Hyderabad, Telangana, India </span></li>
+                <li><span class="icon icon-phone"></span><span class="text">9502841936</span></li>
+                <li><a href="https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><span class="icon icon-envelope"></span><span class="text"></span>mahesh6273766@gmail.com</a></li>
+
+              </ul>
+            </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{{url_for('static',filename="js/jquery.min.js")}}"></script>
+  <script src="{{url_for('static',filename="js/jquery-migrate-3.0.1.min.js")}}"></script>
+  <script src="{{url_for('static',filename="js/popper.min.js")}}"></script>
+  <script src="{{url_for('static',filename="js/bootstrap.min.js")}}"></script>
+  <script src="{{url_for('static',filename="js/jquery.easing.1.3.js")}}"></script>
+  <script src="{{url_for('static',filename="js/jquery.waypoints.min.js")}}"></script>
+  <script src="{{url_for('static',filename="js/jquery.stellar.min.js")}}"></script>
+  <script src="{{url_for('static',filename="js/owl.carousel.min.js")}}"></script>
+  <script src="{{url_for('static',filename="js/jquery.magnific-popup.min.js")}}"></script>
+  <script src="{{url_for('static',filename="js/bootstrap-datepicker.js")}}"></script>
+
+  <script src="{{url_for('static',filename="js/jquery.fancybox.min.js")}}"></script>
+
+  <script src="{{url_for('static',filename="js/aos.js")}}"></script>
+  <script src="{{url_for('static',filename="js/jquery.animateNumber.min.js")}}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{{url_for('static',filename="js/google-map.js")}}"></script>
+  <script src="{{url_for('static',filename="js/main.js")}}"></script>
+
+  </body>
+</html>

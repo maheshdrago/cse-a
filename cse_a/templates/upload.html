@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form  action="{{url_for('core.upload')}}" method="post" enctype="multipart/form-data">
+      {{form.image()}}
+      <br>
+      {{form.submit()}}
+      <br>
+      {{status}}
+    </form>
+    <form  action="{{url_for('core.delete')}}" method="post">
+      <input type="text" name="image_name" value="">
+      <input type="submit" name="" value="Delete">
+    </form>
+
+  </body>
+</html>
