@@ -16,6 +16,7 @@ def index():
     return render_template('index.html')
 
 
+
 @core.route("/donate")
 def donate():
     return render_template('donate.html')
@@ -63,25 +64,51 @@ def assignments():
     return render_template('blog-single.html')
 
 
-@core.route('/upload',methods=['POST','GET'])
+@core.route('/upload_gallery',methods=['POST','GET'])
 def upload():
-    form = Gallery()
-    if request.method=="POST":
-        if form.validate_on_submit:
-            if form.image.data:
-                pic = form.image.data
-                filename = pic.filename
-                path = os.path.join(current_app.root_path,'static\images\gallery',filename)
-                p = Image.open(pic)
-                p.save(path)
-                return render_template('upload.html',status=True,form=form)
-    return render_template('upload.html',status=False,form=form)
+    try:
+        error = None
+        form = Gallery()
+        if request.method=="POST":
+            if form.validate_on_submit:
+                if form.options.data=='image':
+                    if form.file.data:
+                        pic = form.file.data
+                        filename = pic.filename
+                        path = os.path.join(current_app.root_path,'static\images\gallery',filename)
+                        p = Image.open(pic)
+                        p.save(path)
+
+                elif form.options.data=='pdf':
+                    pdf = form.file.data
+                    filename = pdf.filename
+
+                    path = os.path.join(current_app.root_path,'static\pdfs',filename)
+                    pdf.save(path)
+
+            return render_template('upload.html',form=form,error=error)
+        return render_template('upload.html',form=form,error=error)
+    except:
+        error = 'Try again............'
+        return render_template('upload.html',form=form,error=error)
 
 
 
 @core.route('/delete',methods=['POST'])
 def delete():
-    image = request.form['image_name']
-    path = os.path.join(current_app.root_path,'static\images\gallery',image)
-    os.remove(path)
-    return redirect(url_for('core.upload'))
+    error = None
+    try:
+        form = Gallery()
+        image = request.form['image_name']
+        if form.options.data == 'image':
+
+            path = os.path.join(current_app.root_path,'static\images\gallery',image)
+            os.remove(path)
+
+        elif form.options.data=='pdf':
+            path = os.path.join(current_app.root_path,'static\pdfs',image)
+            os.remove(path)
+        return redirect(url_for('core.upload',error=error))
+    except:
+        error = 'Try again........'
+        return redirect(url_for('core.upload',error=error))

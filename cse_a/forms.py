@@ -1,9 +1,10 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileAllowed
-from wtforms import FileField,SubmitField,TextField
+from wtforms import FileField,SubmitField,TextField,SelectField
 
 
 class Gallery(FlaskForm):
-    image = FileField('Image',validators=[FileAllowed(['jpg','png'])])
+    file = FileField('Image',validators=[FileAllowed(['jpg','png','pdf'])])
     delete = TextField('delete')
     submit = SubmitField('upload')
+    options = SelectField('Folder',choices=[('image','image'),('pdf','pdf')])

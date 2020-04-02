@@ -1,18 +1,18 @@
 [[source]]
 name = "pypi"
-url = "https://pypi.python.org/simple"
+url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
 
 [packages]
 flask = "*"
-psycopg2 = "*"
 flask-sqlalchemy = "*"
-gunicorn = "*"
-flask-wtf = "*"
 flask-admin = "*"
+flask-wtf = "*"
 wtforms = "*"
+gunicorn = "*"
+psycopg2 = "*"
 pillow = "*"
 
 [requires]
