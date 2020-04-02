@@ -1,19 +1,18 @@
 [[source]]
 name = "pypi"
-url = "https://pypi.python.org/simple"
+url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
 
 [packages]
-flask = "*"
-psycopg2 = "*"
-flask-sqlalchemy = "*"
-gunicorn = "*"
-flask-wtf = "*"
 flask-admin = "*"
-wtforms = "*"
+flask = "*"
+sqlalchemy = "*"
+flask-sqlalchemy = "*"
 pillow = "*"
+flask-wtf = "*"
+wtforms = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"

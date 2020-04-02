@@ -15,6 +15,25 @@ core = Blueprint('core',__name__)
 def index():
     return render_template('index.html')
 
+@core.route("/pccn")
+def pccn():
+    return render_template('pccn.html')
+
+@core.route("/mc")
+def mc():
+    return render_template("mc.html")
+
+@core.route("/cns")
+def cns():
+    return render_template("cns.html")
+
+@core.route("/cd")
+def cd():
+    return render_template("cd.html")
+
+@core.route("/wt")
+def wt():
+    return render_template("wt.html")
 
 @core.route("/donate")
 def donate():
