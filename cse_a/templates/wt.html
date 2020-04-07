@@ -1,12 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Did not expect this from You :(</h1>
-    <br /> <h1>Search the web to know how the web works</h1>
-</body>
-</html>
+{%extends 'base.html'%}
+{%block content%}
+
+<style media="screen">
+.with-chevron[aria-expanded=0] i {
+display: block;
+transform: rotate(180deg) !important;
+}
+.btn-success {
+  background-color: #f7ca44;
+}
+body {
+min-height: 100vh;
+background-color: #fafafa;
+}
+
+.btn.btn-success {
+    border-color: #f7ca44;
+}
+.btn-warning {
+    color: #f8f9fa;
+    background-color: #f7ca44;
+    border-color: #f7ca44;
+}
+.btn-danger {
+    color: #f8f9fa;
+    background-color: #f7ca44;
+    border-color: #f7ca44;
+}
+</style>
+<div class="block-31" style="position: relative;">
+  <div class="owl-carousel loop-block-31 ">
+    <div class="block-30 block-30-sm item" style="background-image: url('static/images/subjects/web_tech.jpg')" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
+          <div class="col-md-7">
+            <h2 class="heading mb-5">Web Technologies</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="container py-5">
+  <!-- For Demo Purpose-->
+  <header class="text-center">
+    <h1 class="display-4">Syllabus</h1>
+    <p class="text-muted font-italic mb-0">Pdfs are also available for download.</p>
+
+  </header>
+
+  <div class="py-5">
+    <div class="row">
+
+      <div class="col-lg-6 mb-5">
+        <!-- Collapse Panel 1--><a data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="true" aria-controls="collapseExample1" class="btn btn-primary btn-block py-2 shadow-sm with-chevron">
+          <p class="d-flex align-items-center justify-content-between mb-0 px-3 py-2"><strong class="text-uppercase">Unit 1</strong><i class="fa fa-angle-down"></i></p>
+        </a>
+        <div id="collapseExample1" class="collapse shadow-sm ">
+          <div class="card">
+            <div class="card-body">
+              <p class="font-italic mb-0 text-muted">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-5">
+        <!-- Collapse Panel 2-->
+        <button data-toggle="collapse" data-target="#collapseExample2" role="button" aria-expanded="true" aria-controls="collapseExample2" class="btn btn-success btn-block py-2 shadow-sm with-chevron">
+          <p class="d-flex align-items-center justify-content-between mb-0 px-3 py-2"><strong class="text-uppercase">Unit 2</strong><i class="fa fa-angle-down"></i></p>
+        </button>
+        <div id="collapseExample2" class="collapse shadow-sm ">
+          <div class="card">
+            <div class="card-body">
+              <p class="font-italic mb-0 text-muted">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-5">
+        <!-- Collapse Panel 3--><a data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="true" aria-controls="collapseExample3" class="btn btn-warning btn-block p2-3 shadow-sm with-chevron">
+          <p class="d-flex align-items-center justify-content-between mb-0 px-3 py-2"><strong class="text-uppercase">Unit 3</strong><i class="fa fa-angle-down"></i></p>
+        </a>
+        <div id="collapseExample3" class="collapse shadow-sm ">
+          <div class="card">
+            <div class="card-body">
+              <p class="font-italic mb-0 text-muted">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-5">
+        <!-- Collapse Panel 4--><a data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="true" aria-controls="collapseExample4" class="btn btn-danger btn-block p2-3 shadow-sm with-chevron">
+          <p class="d-flex align-items-center justify-content-between mb-0 px-3 py-2"><strong class="text-uppercase">Unit 4</strong><i class="fa fa-angle-down"></i></p>
+        </a>
+        <div id="collapseExample4" class="collapse shadow-sm ">
+          <div class="card">
+            <div class="card-body">
+              <p class="font-italic mb-0 text-muted">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+{%endblock%}

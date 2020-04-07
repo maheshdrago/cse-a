@@ -23,9 +23,9 @@
       <div class="row">
         {%for image in images%}
         <div class="col-md-4">
-          <a href="static/images/gallery/{{image}}" class="img-hover" data-fancybox="gallery">
+          <a href="{{image}}" class="img-hover" data-fancybox="gallery">
             <span class="icon icon-search"></span>
-            <img src='static/images/gallery/{{image}}' alt="Image placeholder" class="img-fluid">
+            <img src='{{image}}' alt="Image placeholder" class="img-fluid">
           </a>
         </div>
         {%endfor%}

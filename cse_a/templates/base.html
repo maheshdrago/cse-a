@@ -28,7 +28,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
-        <a class="navbar-brand" href="index.html">CSE-A</a>
+        <a class="navbar-brand" href="{{url_for('core.index')}}">CSE-A</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu
         </button>
@@ -38,8 +38,9 @@
             <li id='mm' class="nav-item "><a href="{{url_for('core.index')}}" class="nav-link">Home</a></li>
             <li class="nav-item "><a href="{{url_for('core.donate')}}" class="nav-link">Assignments</a></li>
             <li class="nav-item"><a href="{{url_for("core.timeTable")}}" class="nav-link">Time table</a></li>
+
             <li class="nav-item"><a href="{{url_for("core.gallery")}}" class="nav-link">Gallery</a></li>
-            <li class="nav-item"><a href="{{url_for('core.upcomingEvents')}}" class="nav-link">Upcoming Events</a></li>
+            <li class="nav-item"><a href="{{url_for('core.attendance')}}" class="nav-link">Attendance</a></li>
             <li class="nav-item"><a href="{{url_for('core.about')}}" class="nav-link">About</a></li>
             <li class="nav-item"><a href="{{url_for('core.contact')}}" class="nav-link">Contact</a></li>
           </ul>
@@ -52,51 +53,7 @@
     {% endblock %}
 
 
-  <div class="featured-section overlay-color-2" style="background-image: url('static/images/bg_2.jpg');">
-
-
-    <div class="container">
-      <div class="row">
-
-        <div class="col-md-6 mb-5 mb-md-0">
-
-          <img src="static/images/bg_2.jpg" alt="Image placeholder" class="img-fluid">
-
-        </div>
-
-        <div class="col-md-6 pl-md-5">
-
-          <div class="form-volunteer">
-
-
-            <h2>Be A Volunteer Today and help us maintain the website</h2>
-            <form action="{{url_for('core.contact')}}" method="post">
-              <div class="form-group">
-                <!-- <label for="name">Name</label> -->
-                <input type="text" class="form-control py-2" name='name' id="name" placeholder="Enter your name">
-              </div>
-              <div class="form-group">
-                <!-- <label for="email">Email</label> -->
-                <input type="text" name='email' class="form-control py-2" id="email" placeholder="Enter your email">
-              </div>
-              <div class="form-group">
-                <!-- <label for="v_message">Email</label> -->
-                <textarea  name='message' id="" cols="30" rows="3" class="form-control py-2" placeholder="Write your message"></textarea>
-
-                <!-- <input type="text" class="form-control py-2" id="email"> -->
-              </div>
-              <div class="form-group">
-                <input type="submit" class="btn btn-white px-5 py-2" value="Send">
-              </div>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div> <!-- .featured-donate -->
-
+  
   <footer class="footer">
     <div class="container">
       <div class="row mb-5">
@@ -130,7 +87,7 @@
           <div class="block-23">
             <h3 class="heading-section">Get Connected</h3>
               <ul>
-                <li><span class="icon icon-map-marker"></span><span class="text"> Opp.A.P.Forest Academy, Maisammaguda, Medchal, Hyderabad, Telangana, India </span></li>
+                <li><span class="icon icon-map-marker"></span><span class="text"> St. Peter's Engineering College, Opp.A.P.Forest Academy, Maisammaguda, Medchal, Hyderabad, Telangana, India </span></li>
                 <li><span class="icon icon-phone"></span><span class="text">9502841936</span></li>
                 <li><a href="https://accounts.google.com/ServiceLogin/signinchooser?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><span class="icon icon-envelope"></span><span class="text"></span>mahesh6273766@gmail.com</a></li>
 

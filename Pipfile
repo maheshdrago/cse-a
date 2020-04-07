@@ -1,28 +1,22 @@
 [[source]]
 name = "pypi"
-url = "https://pypi.org/simple"
+url = "https://pypi.python.org/simple"
 verify_ssl = true
 
 [dev-packages]
 
 [packages]
-flask-admin = "*"
 flask = "*"
-<<<<<<< HEAD
-flask-sqlalchemy = "*"
 flask-admin = "*"
+flask-sqlalchemy = "*"
 flask-wtf = "*"
 wtforms = "*"
 gunicorn = "*"
 psycopg2 = "*"
 pillow = "*"
-=======
-sqlalchemy = "*"
-flask-sqlalchemy = "*"
-pillow = "*"
-flask-wtf = "*"
-wtforms = "*"
->>>>>>> 300e5902716a66b64ac2d94d33de6cf9917945a4
+boto3 = "*"
+requests = "*"
+
 
 [requires]
-python_version = "3.8"
+python_version = "3.7"

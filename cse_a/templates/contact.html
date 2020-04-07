@@ -16,10 +16,53 @@
     </div>
   </div>
 
+
+
+
+
+  <div class="featured-section overlay-color-2" style="background-image: url('static/images/bg_2.jpg');">
+
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 mb-5 mb-md-0">
+
+          <img src="static/images/bg_2.jpg" alt="Image placeholder" class="img-fluid">
+
+        </div>
+
+        <div class="col-md-6 pl-md-5">
+
+          <div class="form-volunteer">
+
+
+            <h2>Be A Volunteer Today and help us maintain the website</h2>
+            <form action="{{url_for('core.contact')}}" method="post">
+              <div class="form-group">
+                <!-- <label for="name">Name</label> -->
+                <input type="text" class="form-control py-2" name='name' id="name" placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <!-- <label for="email">Email</label> -->
+                <input type="text" name='email' class="form-control py-2" id="email" placeholder="Enter your email">
+              </div>
+              <div class="form-group">
+                <!-- <label for="v_message">Email</label> -->
+                <textarea  name='message' id="" cols="30" rows="3" class="form-control py-2" placeholder="Write your message"></textarea>
+
+                <!-- <input type="text" class="form-control py-2" id="email"> -->
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-white px-5 py-2" value="Send">
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
 
-
-
+  </div> <!-- .featured-donate -->
 
 {% endblock %}

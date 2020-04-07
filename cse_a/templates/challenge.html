@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cse-a</title>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,500|Dosis:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/open-iconic-bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/animate.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/aos.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/ionicons.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-datepicker.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/jquery.timepicker.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/icomoon.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/fancybox.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+  </head>
+  <style>
+
+
+    .op>#select{
+      border : 0px solid grey;
+      border-radius: 5px;
+      height:25px;
+      margin-left:2px;
+    }
+    textarea{
+      resize:none;
+    }
+  </style>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-dark" id="ftco-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">CSE-A</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li id='mm' class="nav-item "><a href="{{url_for('core.index')}}" class="nav-link">Home</a></li>
+            <li class="nav-item "><a href="{{url_for('core.donate')}}" class="nav-link">Assignments</a></li>
+            <li class="nav-item"><a href="{{url_for("core.timeTable")}}" class="nav-link">Time table</a></li>
+            <li class="nav-item"><a href="{{url_for("core.gallery")}}" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="{{url_for('core.attendance')}}" class="nav-link">Attendance</a></li>
+            <li class="nav-item"><a href="{{url_for('core.about')}}" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="{{url_for('core.contact')}}" class="nav-link">Contact</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<br><br><br><br>
+
+<form class="" action="{{url_for('core.challenge',id=ele.id)}}" method="post">
+<div class="container">
+
+  <div class="jumbotron">
+
+    <h1>{{ele.title}}</h1>
+    <br><br>
+
+
+      {%set s=ele.description.split('\n')%}
+
+      {%for i in s%}
+        <p>{{i}}</p>
+      {%endfor%}
+
+
+
+  </div>
+
+
+</div>
+<br><br>
+<br>
+<div class="container">
+  <div class="jumbotron">
+
+      <div class="op">
+        <select name="lang" id="select">
+          {%for i in languages%}
+            <option >{{i}}</option>
+          {%endfor%}
+        </select>
+      </div>
+      <hr>
+
+      <div class="ide">
+
+        <div class="container">
+          <div class="jumbotron">
+
+
+
+              <label for="code">code</label>
+              <textarea cols="120" rows="16" name="code" id="code" placeholder="Write your code here.."style="overflow-y: auto; width: 100%; height: 60%; display: inline; font-size: 15px;font-family: consolas;" wrap="off">{{code}}</textarea>
+              <label for="input">input</label>
+              <textarea cols="60" rows="5" name="input" id="input" placeholder="give inputs only if you have any!"style="overflow-y: auto; width: 100%; height: 60%; display: inline; font-size: 15px;font-family: consolas;" wrap="off"></textarea>
+              <input type="submit" name="" value="Run"><br><br><br>
+              <p>
+                {%if output["statusCode"]==200%}<strong>Status</strong>:Executed Successfuly{%else%}<strong>Status</strong>:Error{%endif%}<strong style="padding-left: 4em;">Time</strong>:{{output['cpuTime']}} sec<strong style="padding-left: 4em;">Memory</strong>:{{output['memory']}} bytes</p>
+              <label for="output">Output</label>
+              <textarea cols="80" readonly rows="8" name="input" id="output" style="overflow-y: auto; width: 100%; height: 60%; display: inline; font-size: 15px;font-family: consolas;" wrap="off">{{output['output']}}</textarea>
+
+
+          </div>
+
+        </div>
+      </div>
+
+
+  </div>
+</div>
+  </form>
+
+                  </script>
+
+      <script src="{{url_for('static',filename="js/jquery.min.js")}}"></script>
+      <script src="{{url_for('static',filename="js/jquery-migrate-3.0.1.min.js")}}"></script>
+      <script src="{{url_for('static',filename="js/popper.min.js")}}"></script>
+      <script src="{{url_for('static',filename="js/bootstrap.min.js")}}"></script>
+      <script src="{{url_for('static',filename="js/jquery.easing.1.3.js")}}"></script>
+      <script src="{{url_for('static',filename="js/jquery.waypoints.min.js")}}"></script>
+      <script src="{{url_for('static',filename="js/jquery.stellar.min.js")}}"></script>
+      <script src="{{url_for('static',filename="js/owl.carousel.min.js")}}"></script>
+      <script src="{{url_for('static',filename="js/jquery.magnific-popup.min.js")}}"></script>
+      <script src="{{url_for('static',filename="js/bootstrap-datepicker.js")}}"></script>
+
+      <script src="{{url_for('static',filename="js/jquery.fancybox.min.js")}}"></script>
+
+      <script src="{{url_for('static',filename="js/aos.js")}}"></script>
+      <script src="{{url_for('static',filename="js/jquery.animateNumber.min.js")}}"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+      <script src="{{url_for('static',filename="js/google-map.js")}}"></script>
+      <script src="{{url_for('static',filename="js/main.js")}}"></script>
+
+</div>
+</BODY>
+</html>
